@@ -1,0 +1,1524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>navdeep's website</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600&display=swap");
+* {
+  font-family: "Nunito", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  text-transform: capitalize;
+  transition: all 0.2s linear;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+  overflow-x: hidden;
+}
+html::-webkit-scrollbar {
+  width: 1rem;
+}
+html::-webkit-scrollbar-track {
+  background: #000;
+}
+html::-webkit-scrollbar-thumb {
+  background: rgb(38, 145, 194);
+}
+
+body {
+  background: #000;
+}
+
+section {
+  padding: 5rem 9%;
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+}
+.heading::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 0.1rem;
+  width: 100%;
+  background: #aaa;
+  z-index: -1;
+}
+.heading span {
+  font-size: 3rem;
+  color: rgb(38, 145, 194);
+  background: #000;
+  padding: 0.5rem 1.5rem;
+  border: 0.1rem solid #aaa;
+  border-radius: 0.5rem;
+}
+
+.btn {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 1rem 2.8rem;
+  padding-right: 3rem;
+  background: linear-gradient(130deg, rgb(38, 145, 194) 93%, transparent 90%);
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.7rem;
+  border-radius: 2rem; /* Add border-radius property with desired value for round edges */
+}
+.btn:hover {
+  transform: scale(1.1);
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 9%;
+  z-index: 10000;
+  background: #000;
+}
+.header .logo {
+  font-weight: bolder;
+  color: #fff;
+  font-size: 3rem;
+}
+.header .logo span {
+  color: rgb(38, 145, 194);
+}
+.header .navbar a {
+  display: inline-block;
+  padding: 1.5rem 2rem;
+  font-size: 1.7rem;
+  color: #fff;
+}
+.header .navbar a:hover {
+  background: rgb(38, 145, 194);
+}
+.header .navbar a .navbar .btnLogin-popup {
+  width: 130px;
+  height: 50px;
+  background-color: #000;
+  border: 2px solid white;
+  outline: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: white;
+  font-weight: 500;
+  margin-left: 40px;
+  transition: 0.5s;
+}
+.header .navbar a .navbar .btnLogin-popup:hover {
+  background-color: royalblue;
+}
+
+#menu-btn {
+  font-size: 3rem;
+  color: #fff;
+  cursor: pointer;
+  display: none;
+}
+
+.home {
+  padding: 0;
+  margin-top: 5rem;
+}
+.home .slide {
+  min-height: 70vh;
+  background-size: cover !important;
+  background-position: center !important;
+  padding: 2rem 9%;
+  display: flex;
+  align-items: center;
+}
+.home .slide .content {
+  width: 60rem;
+}
+.home .slide .content span {
+  font-size: 2rem;
+  color: rgb(38, 145, 194);
+  display: block;
+}
+.home .slide .content h3 {
+  font-size: 5rem;
+  color: #fff;
+  padding: 1rem 0;
+}
+
+.swiper-pagination-bullet {
+  height: 2rem;
+  width: 2rem;
+  background: #fff;
+  border-radius: 0;
+}
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background: rgb(38, 145, 194);
+}
+
+.about {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8rem;
+}
+.about .image {
+  flex: 1 1 42rem;
+  position: relative;
+}
+.about .image::before, .about .image::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background: rgb(38, 145, 194);
+  height: 15rem;
+  width: 15rem;
+}
+.about .image::before {
+  top: 0;
+  left: 0;
+}
+.about .image::after {
+  bottom: 0;
+  right: 0;
+}
+.about .image img {
+  width: 100%;
+  padding: 2rem;
+}
+.about .content {
+  flex: 1 1 42rem;
+}
+.about .content span {
+  font-size: 2rem;
+  color: rgb(38, 145, 194);
+}
+.about .content .title {
+  font-size: 4rem;
+  color: #fff;
+  margin-top: 0.5rem;
+}
+.about .content p {
+  font-size: 1.5rem;
+  color: #aaa;
+  padding: 1rem 0;
+  line-height: 2;
+}
+.about .content .box-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+.about .content .box-container .box {
+  flex: 1 1 20rem;
+}
+.about .content .box-container .box h3 {
+  font-size: 2rem;
+  color: #fff;
+}
+.about .content .box-container .box h3 i {
+  padding-right: 1.5rem;
+  color: rgb(38, 145, 194);
+}
+
+.features .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+  gap: 1.5rem;
+  gap: 0;
+}
+.features .box-container .box {
+  background: #111;
+}
+.features .box-container .box.second {
+  display: flex;
+  flex-flow: column-reverse;
+}
+.features .box-container .box:hover .image img {
+  transform: scale(1.1);
+}
+.features .box-container .box .image {
+  height: 30rem;
+  width: 100%;
+  overflow: hidden;
+}
+.features .box-container .box .image img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.features .box-container .box .content {
+  padding: 2rem;
+  text-align: center;
+}
+.features .box-container .box .content img {
+  height: 9rem;
+  margin-bottom: 1rem;
+  filter: invert(1);
+}
+.features .box-container .box .content h3 {
+  font-size: 2rem;
+  color: rgb(38, 145, 194);
+}
+.features .box-container .box .content p {
+  line-height: 2;
+  font-size: 1.5rem;
+  color: #aaa;
+  padding: 1rem 0;
+}
+
+.pricing {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+  gap: 1.5rem;
+}
+.pricing .information span {
+  font-size: 2rem;
+  color: rgb(38, 145, 194);
+}
+.pricing .information h3 {
+  font-size: 4rem;
+  padding-top: 0.5rem;
+  color: #fff;
+}
+.pricing .information p {
+  line-height: 2;
+  padding: 1rem 0;
+  font-size: 1.4rem;
+  color: #aaa;
+}
+.pricing .information p i {
+  padding-right: 1rem;
+  color: rgb(38, 145, 194);
+}
+.pricing .plan {
+  text-align: center;
+  padding: 2rem;
+}
+.pricing .plan.basic {
+  background: linear-gradient(130deg, #111 93%, transparent 90%);
+}
+.pricing .plan h3 {
+  font-size: 2.5rem;
+  margin: 1rem 0;
+  color: #fff;
+}
+.pricing .plan .price {
+  font-size: 5rem;
+  font-weight: bolder;
+  color: rgb(38, 145, 194);
+}
+.pricing .plan .price span {
+  color: #fff;
+  font-size: 2rem;
+}
+.pricing .plan .list {
+  padding: 1rem 0;
+}
+.pricing .plan .list p {
+  line-height: 2;
+  padding: 1rem 0;
+  font-size: 1.4rem;
+  color: #aaa;
+}
+.pricing .plan .list p i {
+  padding-right: 1rem;
+  color: rgb(38, 145, 194);
+}
+
+.trainers .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(29rem, 1fr));
+  gap: 1.5rem;
+}
+.trainers .box-container .box {
+  height: 40rem;
+  overflow: hidden;
+  position: relative;
+}
+.trainers .box-container .box:hover .content {
+  transform: translateY(0);
+}
+.trainers .box-container .box img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.trainers .box-container .box .content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #111;
+  padding: 2rem;
+  transform: translateY(6.5rem);
+}
+.trainers .box-container .box .content span {
+  font-size: 1.5rem;
+  color: rgb(38, 145, 194);
+}
+.trainers .box-container .box .content h3 {
+  font-size: 2rem;
+  color: #fff;
+  padding-top: 0.5rem;
+}
+.trainers .box-container .box .content .share {
+  padding-top: 2rem;
+  margin-top: 1.5rem;
+  border-top: 0.1rem solid #aaa;
+}
+.trainers .box-container .box .content .share a {
+  font-size: 2rem;
+  color: #fff;
+  margin-right: 1.5rem;
+}
+.trainers .box-container .box .content .share a:hover {
+  color: rgb(38, 145, 194);
+}
+
+.banner {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../images/banner-bg.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  text-align: center;
+}
+.banner span {
+  font-size: 2rem;
+  color: rgb(38, 145, 194);
+}
+.banner h3 {
+  padding-top: 1rem;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 3.5rem;
+}
+.banner p {
+  margin: 1rem auto;
+  max-width: 60rem;
+  font-size: 1.5rem;
+  color: #aaa;
+  line-height: 2;
+}
+
+.review {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.review .information {
+  flex: 1 1 35rem;
+}
+.review .information span {
+  font-size: 2rem;
+  color: rgb(38, 145, 194);
+}
+.review .information h3 {
+  font-size: 3rem;
+  color: #fff;
+  padding-top: 1rem;
+}
+.review .information p {
+  font-size: 1.5rem;
+  line-height: 2;
+  color: #aaa;
+  padding: 1rem 0;
+}
+.review .review-slider {
+  flex: 1 1 60rem;
+}
+.review .review-slider .slide {
+  background: linear-gradient(130deg, #111 93%, transparent 90%);
+  padding: 2rem 3rem;
+}
+.review .review-slider .slide p {
+  font-size: 1.5rem;
+  line-height: 2;
+  color: #aaa;
+}
+.review .review-slider .slide .user {
+  display: flex;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+.review .review-slider .slide .user img {
+  height: 5rem;
+  width: 5rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+.review .review-slider .slide .user h3 {
+  font-size: 2rem;
+  color: #fff;
+}
+.review .review-slider .slide .user span {
+  color: rgb(38, 145, 194);
+  font-size: 1.5rem;
+}
+.review .review-slider .slide .user i {
+  font-size: 5rem;
+  margin-left: auto;
+  margin-right: 2rem;
+  color: rgb(38, 145, 194);
+}
+
+.blogs .slide {
+  background: #111;
+  margin-bottom: 7rem;
+}
+.blogs .slide:hover .image img {
+  transform: scale(1.1);
+}
+.blogs .slide .image {
+  height: 25rem;
+  width: 100%;
+  overflow: hidden;
+}
+.blogs .slide .image img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.blogs .slide .video {
+  height: 25rem;
+  width: 100%;
+  overflow: hidden;
+}
+.blogs .slide .video vid {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.blogs .slide .content {
+  padding: 2rem;
+}
+.blogs .slide .content .link {
+  padding-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+.blogs .slide .content .link a {
+  color: rgb(38, 145, 194);
+}
+.blogs .slide .content .link a:hover {
+  color: #fff;
+}
+.blogs .slide .content .link span {
+  color: #fff;
+  padding: 0 1rem;
+}
+.blogs .slide .content h3 {
+  font-size: 2rem;
+  color: #fff;
+  line-height: 1.5;
+}
+.blogs .slide .content p {
+  font-size: 1.5rem;
+  color: #aaa;
+  line-height: 2;
+  padding: 1rem 0;
+}
+
+.famous_articles .slide {
+  background: #111;
+  margin-bottom: 7rem;
+}
+.famous_articles .slide:hover .image img {
+  transform: scale(1.1);
+}
+.famous_articles .slide .image {
+  height: 25rem;
+  width: 100%;
+  overflow: hidden;
+}
+.famous_articles .slide .image img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.famous_articles .slide .video {
+  height: 25rem;
+  width: 100%;
+  overflow: hidden;
+}
+.famous_articles .slide .video vid {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.famous_articles .slide .content {
+  padding: 2rem;
+}
+.famous_articles .slide .content .link {
+  padding-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+.famous_articles .slide .content .link a {
+  color: rgb(38, 145, 194);
+}
+.famous_articles .slide .content .link a:hover {
+  color: #fff;
+}
+.famous_articles .slide .content .link span {
+  color: #fff;
+  padding: 0 1rem;
+}
+.famous_articles .slide .content h3 {
+  font-size: 2rem;
+  color: #fff;
+  line-height: 1.5;
+}
+.famous_articles .slide .content p {
+  font-size: 1.5rem;
+  color: #aaa;
+  line-height: 2;
+  padding: 1rem 0;
+}
+
+.footer .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 1.5rem;
+}
+.footer .box-container .box h3 {
+  font-size: 2.2rem;
+  color: #fff;
+  padding: 1rem 0;
+}
+.footer .box-container .box .links {
+  font-size: 1.5rem;
+  display: block;
+  color: #aaa;
+  padding: 1rem 0;
+}
+.footer .box-container .box .links:hover {
+  color: rgb(38, 145, 194);
+}
+.footer .box-container .box p {
+  font-size: 1.5rem;
+  color: #aaa;
+  padding: 1rem 0;
+}
+.footer .box-container .box p i {
+  padding-right: 0.5rem;
+  color: rgb(38, 145, 194);
+}
+.footer .box-container .box .share {
+  padding: 1rem 0;
+}
+.footer .box-container .box .share a {
+  height: 4.5rem;
+  width: 4.5rem;
+  line-height: 4.5rem;
+  font-size: 1.7rem;
+  color: #fff;
+  background: #111;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+  text-align: center;
+}
+.footer .box-container .box .share a:hover {
+  background: rgb(38, 145, 194);
+}
+.footer .box-container .box form .email {
+  margin-bottom: 1rem;
+  width: 100%;
+  background: #111;
+  padding: 1.2rem;
+  font-size: 1.5rem;
+  color: #fff;
+  text-transform: none;
+}
+
+.credit {
+  font-size: 2rem;
+  text-align: center;
+  padding: 2rem;
+  color: #fff;
+  background: #111;
+  line-height: 1.5;
+}
+.credit span {
+  color: rgb(38, 145, 194);
+}
+
+@media (max-width: 991px) {
+  html {
+    font-size: 55%;
+    scroll-padding: 7rem;
+  }
+  .header {
+    padding: 0 2rem;
+  }
+  section {
+    padding: 3rem 2rem;
+  }
+  .home .slide {
+    padding: 2rem 5%;
+  }
+  .home .slide .content {
+    width: 50rem;
+  }
+  .home .slide .content h3 {
+    font-size: 4rem;
+  }
+}
+@media (max-width: 768px) {
+  #menu-btn {
+    display: inline-block;
+  }
+  #menu-btn.fa-times {
+    transform: rotate(180deg);
+  }
+  .header {
+    padding: 2rem;
+  }
+  .header .navbar {
+    position: absolute;
+    top: 99%;
+    left: 0;
+    right: 0;
+    background: #000;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  .header .navbar.active {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  .header .navbar a {
+    display: block;
+    font-size: 2rem;
+    
+  }
+  .about {
+    gap: 3rem;
+  }
+  .about .image {
+    margin-top: 5rem;
+  }
+  .about .content .title {
+    font-size: 3rem;
+  }
+  .features .box-container .box.second {
+    flex-flow: column;
+  }
+}
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+}/*# sourceMappingURL=style.css.map */
+
+/* Add your CSS styles here */
+
+.form-container {
+  max-width: 300px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #080808;
+  background-color: #000000;
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="password"],
+.form-container input[type="number"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid black;
+  box-sizing: border-box;
+}
+
+.form-container button {
+  background-color: royalblue;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.form-container button:hover {
+  opacity: 0.8;
+}
+</style>
+</head>
+<body>
+    
+<!-- header section starts      -->
+
+<header class="header">
+
+    <a href="#" class="logo"> <span>CU</span>FITNESS </a>
+
+    <div id="menu-btn" class="fas fa-bars"></div>
+
+    <nav class="navbar">
+        <a href="#home" style="position: relative; top:3px;">home</a>
+        <!-- <a href="#about"  style="position: relative; top:3px;">about</a> -->
+        <!-- <a href="#features"  style="position: relative; top:3px;">features</a> -->
+        <a href="#pricing"  style="position: relative; top:3px;">pricing</a>
+        <a href="#trainers"  style="position: relative; top:3px;">trainers</a>
+        <!-- <a href="#blogs">blogs</a> -->
+        
+        <a href="/exercise"  style="position: relative; top:3px;">Exercises</a>
+        <a href="/exerciseslist"  style="position: relative; top:3Px;">Exercises List</a>
+        <a href="/logout" style="position: relative;top: 3PX; ">Logout</a>
+       
+      </nav>
+
+  
+</header>
+
+<!-- header section endss     -->
+  <script>
+    function showLoginForm() {
+      document.getElementById('login-form').style.display = 'block';
+      document.getElementById('signup-form').style.display = 'none';
+    }
+
+    function showSignupForm() {
+      document.getElementById('login-form').style.display = 'none';
+      document.getElementById('signup-form').style.display = 'block';
+    }
+  </script>
+<!-- home section starts  -->
+
+
+<section class="home" id="home">
+
+    <div class="swiper home-slider">
+
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide slide" style="background: url(images/home-bg-1.jpg) no-repeat;">
+                <div class="content">
+                    <span>"Unleash Your Fitness Drive"</span>
+                    <h3>Empower Yourself, Rise Above Your Excuses.</h3>
+                    <a href="#" class="btn">get started</a>
+                </div>
+            </div>
+
+            <!-- <div class="swiper-slide slide" style="background: url(images/home-bg-1.jpg) no-repeat;">
+                <div class="content">
+                    <h3>"Unleash Your Potential, Embrace a Fit Lifestyle"</h3>
+                    <a href="#" class="btn">get started</a>
+                </div>
+            </div> -->
+            <div class="swiper-slide slide" style="background: url(images/home-bg-3.jpg) no-repeat;">
+                <div class="content">
+                    <span></span>
+                    <h3>"Unleash Your Potential, Embrace a Fit Lifestyle"-</h3>
+                    <a href="#" class="btn">get started</a>
+                </div>
+            </div>
+            <div class="swiper-slide slide" style="background: url(images/home-bg-2.jpg) no-repeat;">
+                <div class="content">
+                    <span>be strong, be fit</span>
+                    <h3>Make yourself stronger than your excuses.</h3>
+                    <a href="#" class="btn">get started</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="swiper-pagination"></div>
+
+    </div>
+
+</section>
+
+<!-- home section ends -->
+
+<!-- about section starts  -->
+
+<section class="about" id="about">
+
+    <div class="image">
+        <img src="images/about-img.jpg" alt="">
+    </div>
+
+    <div class="content">
+        <span>about us</span>
+        <h3 class="title">Every day is a chance to become better</h3>
+        <p>Every day is a chance to become better. We can learn from our mistakes, grow from our experiences, and strive to be the best versions of ourselves. Here are a few things you can do to make the most of each day:
+
+          Set goals for yourself and work towards achieving them.
+          Learn something new every day.
+          Be kind to yourself and others.
+          Take care of your physical and mental health.
+          Make time for the things you love.</p>
+        <div class="box-container">
+            <div class="box">
+                <h3><i class="fas fa-check"></i>body and mind</h3>
+                <p>Body and mind, one and the same.
+                  When one is healthy, the other follows.</p>
+            </div>
+            <div class="box">
+                <h3><i class="fas fa-check"></i>healthy life a journey</h3>
+                <p>It is a lifelong process of making choices that promote physical, mental, and emotional well-being.</p>
+            </div>
+            <div class="box">
+                <h3><i class="fas fa-check"></i>strategies</h3>
+                <p>Strategies are plans of action that help us achieve our goals. They can be simple or complex.</p>
+            </div>
+            <div class="box">
+                <h3><i class="fas fa-check"></i>workout</h3>
+                <p>Sweat, grind, and get stronger.</p>
+            </div>
+        </div>
+        <a href="#" class="btn">read more</a>
+    </div>
+
+</section>
+
+<!-- about section ends -->
+
+<!-- features section starts  -->
+
+<section class="features" id="features">
+
+    <h1 class="heading"> <span>gym features</span> </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <div class="image">
+                <img src="images/f-img-1.jpg" alt="">
+            </div>
+            <div class="content">
+                <img src="images/icon-1.png" alt="">
+                <h3>body building</h3>
+                <p> A place to push yourself, reach your goals, and become the best version of yourself.</p>
+                <a href="https://www.bodybuilding.com/exercises" class="btn">read more</a>
+            </div>
+        </div>
+
+        <div class="box second">
+            <div class="image">
+                <img src="images/f-img-2.jpg" alt="">
+            </div>
+            <div class="content">
+                <img src="images/icon-2.png" alt="">
+                <h3>gym for men</h3>
+                <p>Where men can build strength, confidence, and community.</p>
+                <a href="https://www.mayoclinic.org/healthy-lifestyle/fitness/in-depth/exercise/art-20048389" class="btn">read more</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="image">
+                <img src="images/f-img-3.jpg" alt="">
+            </div>
+            <div class="content">
+                <img src="images/icon-3.png" alt="">
+                <h3>gym for women</h3>
+                <p>A gym for women is a safe and supportive space where women can come to get fit and healthy.</p>
+                <a href="https://www.mayoclinic.org/healthy-lifestyle/fitness/in-depth/exercise/art-20048389" class="btn">read more</a>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- features section ends -->
+
+<!-- pricing section starts  -->
+
+<section class="pricing" id="pricing">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0"/>
+    <div class="information">
+        <span>pricing plan</span>
+        <h3>affordable pricing plan for your</h3>
+        <p>We offer a variety of affordable pricing plans to fit your budget. Our monthly memberships start at just ₹ 250 and include unlimited access to our gym, fitness classes, and personal training services. We also offer a variety of other membership options, including day passes, 10-class packs, and annual memberships.</p>
+        <p> <i class="fas fa-check"></i> cardio exercise </p>
+        <p> <i class="fas fa-check"></i> weight lifting </p>
+        <p> <i class="fas fa-check"></i> diet plans </p>
+        <p> <i class="fas fa-check"></i> overall results </p>
+        <a href="#" class="btn">all pricing</a>
+    </div>
+
+    <div class="plan basic">
+        <h3>basic plan</h3>
+        <div class="price"><span>₹</span>250<span>/mo</span></div>
+       <div class="list">
+        <p> <i class="fas fa-check"></i> personal training </p>
+        <p> <i class="fas fa-check"></i> cardio exercise </p>
+        <p> <i class="fas fa-check"></i> weight lifting </p>
+        <p> <i class="fas fa-check"></i> diet plans </p>
+        <p> <i class="fas fa-check"></i> overall results </p>
+       </div>
+       <a href="checkout.js" class="btn">get started</a>
+    </div>
+
+    <div class="plan">
+        <h3>premium plan</h3>
+        <div class="price"><span>₹</span>900<span>/mo</span></div>
+       <div class="list">
+        <p> <i class="fas fa-check"></i> personal training </p>
+        <p> <i class="fas fa-check"></i> advance graphs </p>
+        <p> <i class="fas fa-check"></i> monthly report  </p>
+        <p> <i class="fas fa-check"></i> multiple users database </p>
+        <p> <i class="fas fa-check"></i> overall results </p>
+       </div>
+       <a href="#" class="btn">get started</a>
+    </div>
+
+</section>
+<!-- let defaultMerchantConfiguration = {
+    "root": "",
+    "style": {
+        "bodyColor": "",
+        "themeBackgroundColor": "",
+        "themeColor": "",
+        "headerBackgroundColor": "",
+        "headerColor": "",
+        "errorColor": "",
+        "successColor": ""
+    },
+    "flow": "DEFAULT",
+    "data": {
+        "orderId": "",
+        "token": "",
+        "tokenType": "TXN_TOKEN",
+        "amount": "",
+        "userDetail": {
+            "mobileNumber": "",
+            "name": ""
+        }
+    },
+    "merchant": {
+        "mid": "",
+        "name": "",
+        "redirect": true
+    },
+    "labels": {},
+    "payMode": {
+        "labels": {},
+        "filter": [],
+        "order": []
+    },
+    "handler": {}
+};let defaultMerchantConfiguration = {
+    "root": "",
+    "style": {
+        "bodyColor": "",
+        "themeBackgroundColor": "",
+        "themeColor": "",
+        "headerBackgroundColor": "",
+        "headerColor": "",
+        "errorColor": "",
+        "successColor": ""
+    },
+    "flow": "DEFAULT",
+    "data": {
+        "orderId": "",
+        "token": "",
+        "tokenType": "TXN_TOKEN",
+        "amount": "",
+        "userDetail": {
+            "mobileNumber": "",
+            "name": ""
+        }
+    },
+    "merchant": {
+        "mid": "",
+        "name": "",
+        "redirect": true
+    },
+    "labels": {},
+    "payMode": {
+        "labels": {},
+        "filter": [],
+        "order": []
+    },
+    "handler": {}
+}; -->
+<!-- pricing section ends -->
+
+<!-- trainers section starts  -->
+
+<section class="trainers" id="trainers">
+
+    <h1 class="heading"> <span>expert trainers</span> </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <img src="images/blog-4.jpg" alt="">
+            <div class="content">
+                <span>expert trainer</span>
+                <h3>john deo</h3>
+                <div class="share">
+                    <a href="#" class="fab fa-facebook-f"></a>
+                    <a href="#" class="fab fa-twitter"></a>
+                    <a href="#" class="fab fa-pinterest"></a>
+                    <a href="#" class="fab fa-linkedin"></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="images/trainer-2.jpg" alt="">
+            <div class="content">
+                <span>expert trainer</span>
+                <h3>john deo</h3>
+                <div class="share">
+                    <a href="#" class="fab fa-facebook-f"></a>
+                    <a href="#" class="fab fa-twitter"></a>
+                    <a href="#" class="fab fa-pinterest"></a>
+                    <a href="#" class="fab fa-linkedin"></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="images/trainer-3.jpg" alt="">
+            <div class="content">
+                <span>expert trainer</span>
+                <h3>john deo</h3>
+                <div class="share">
+                    <a href="#" class="fab fa-facebook-f"></a>
+                    <a href="#" class="fab fa-twitter"></a>
+                    <a href="#" class="fab fa-pinterest"></a>
+                    <a href="#" class="fab fa-linkedin"></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="images/trainer-4.jpg" alt="">
+            <div class="content">
+                <span>expert trainer</span>
+                <h3>john deo</h3>
+                <div class="share">
+                    <a href="#" class="fab fa-facebook-f"></a>
+                    <a href="#" class="fab fa-twitter"></a>
+                    <a href="#" class="fab fa-pinterest"></a>
+                    <a href="#" class="fab fa-linkedin"></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="images/trainer-5.jpg" alt="">
+            <div class="content">
+                <span>expert trainer</span>
+                <h3>john deo</h3>
+                <div class="share">
+                    <a href="#" class="fab fa-facebook-f"></a>
+                    <a href="#" class="fab fa-twitter"></a>
+                    <a href="#" class="fab fa-pinterest"></a>
+                    <a href="#" class="fab fa-linkedin"></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="images/trainer-6.png" alt="">
+            <div class="content">
+                <span>expert trainer</span>
+                <h3>Jeet Selal</h3>
+                <div class="share">
+                    <a href="https://www.instagram.com/jeet_selal/?hl=en" class="fab fa-facebook-f"></a>
+                    <a href="https://twitter.com/jeetselal?lang=en" class="fab fa-twitter"></a>
+                    <a href="https://in.pinterest.com/pin/864198616010072510/" class="fab fa-pinterest"></a>
+                    <a href="https://www.linkedin.com/company/himalayan-stallion/?originalSubdomain=in" class="fab fa-linkedin"></a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- trainers section ends -->
+
+<!-- banner section starts  -->
+
+<section class="banner">
+
+    <span>join us now</span>
+    <h3>get upto 50% discount</h3>
+    <p></p>
+    <a href="#" class="btn">get discount</a>
+
+</section>
+
+<!-- banner section ends -->
+
+<!-- review section starts  -->
+
+<section class="review">
+
+    <div class="information">
+        <span>Research Section</span>
+        <h3>"Uncover the Science Behind Optimal Nutrition: Explore our Research Section!"</h3>
+        <p>Prepare to embark on an insightful expedition through our collection of research papers, carefully curated for your benefit.</p>
+        <a href="#" class="btn">read more</a>
+    </div>
+
+    <div class="swiper review-slider">
+
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide slide">
+                <p>"effect of exercise training on weight loss."</p>
+                <div class="user">
+                    <img src="images/pic-1.jpeg" alt="">
+                    <div  class="info">
+                        <h3>Alice Bellicha</h3>
+                        <span>University Sorbonne Paris Nord</span>
+                    </div>
+                    <!-- <i class="fas fa-quote-left"></i> -->
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/33955140/" class="btn">read more</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide slide">
+                <p>"Weight loss strategies that really work"</p>
+                <div class="user">
+                    <img src="images/pic-2.jpeg" alt="">
+                    <div class="info">
+                        <h3>Kathryn M Kolasa</h3>
+                        <span>East Carolina University</span>
+                    </div>
+                    <!-- <i class="fas fa-quote-left"></i> -->
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/20625566/" class="btn">Check This</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide slide">
+                <p>"Added sugar intake and cardiovascular diseases mortality among US adults"</p>
+                <div class="user">
+                    <img src="images/pic-3.jpeg" alt="">
+                    <div class="info">
+                        <h3>W. Dana Flanders</h3>
+                        <span>Emory University</span>
+                    </div>
+                    <!-- <i class="fas fa-quote-left"></i> -->
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/24493081/" class="btn">Need Help</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide slide">
+                <p>"Nutrition and muscle protein synthesis: a descriptive review."</p>
+                <div class="user">
+                    <img src="images/pic-4.jpeg" alt="">
+                    <div class="info">
+                        <h3>Dan J. Weinert</h3>
+                        <span>Penn State University</span>
+                    </div>
+                    <!-- <i class="fas fa-quote-left"></i> -->
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/19714233/" class="btn">Here!</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide slide">
+                <p>"Interventions for preventing excessive weight gain during pregnancy"</p>
+                <div class="user">
+                    <img src="images/pic-5.jpeg" alt="">
+                    <div class="info">
+                        <h3>Thang. S</h3>
+                        <span>University of Birmingham</span>
+                    </div>
+                    <!-- <i class="fas fa-quote-left"></i> -->
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/22513947/" class="btn">More</a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- review section ends -->
+
+<!-- blogs section starts  -->
+
+<section class="blogs" id="blogs">
+
+    <h1 class="heading"> <span>daily posts</span> </h1>
+
+    <div class="swiper blogs-slider">
+
+        <div class="swiper-wrapper">
+
+            <!-- <div class="swiper-slide slide">
+                <div class="image">
+                    <img src="images/blog-1.jpg" alt="">
+                </div>
+                <div class="content">
+                    <div class="link"> <a href="#">by user</a> <span>|</span> <a href="#">21st may, 2021</a> </div>
+                    <h3>fitness is not about being better than someone else</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam, tenetur?</p>
+                    <a href="#" class="btn">read more</a>
+                </div>
+            </div> -->
+            <!-- <div class="swiper-slidse slide">
+                <div class="video">
+                    <video autoplay loop muted>
+                        <vid src="videos/demo.mov" type="video/mp4">
+                        
+                    </video>
+                </div>
+                <div class="content">
+                    <div class="link"> <a href="#">by user</a> <span>|</span> <a href="#">21st may, 2021</a> </div>
+                    <h3>fitness is not about being better than someone else</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam, tenetur?</p>
+                    <a href="#" class="btn">read more</a>
+                </div>
+            </div> -->
+            
+            <div class="swiper-slide slide">
+              <div class="image">
+                  <img src="images/blog-5.jpg" alt="">
+              </div>
+              <div class="content">
+                  <div class="link"> <a href="https://www.firmfitpersonaltraining.com/single-post/2016/12/28/-fitness-is-not-about-being-better-than-someone-else-it-s-about-being-better-than-you-us#:~:text=919.368.0333-,%E2%80%9CFitness%20is%20not%20about%20being%20better%20than%20someone%20else%E2%80%A6%20it's,competition%20to%20measure%20their%20success.">by FirmFit</a> <span>|</span> <a href="#">21st may, 2021</a> </div>
+                  <h3>fitness is not about being better than someone else</h3>
+                  <p> Exercise is a fundamental practice to strengthen well-being. 
+                      Physical activity helps protect both the body and the 
+                      mind from disease, research shows. Famous people have had 
+                      a lot to say about the wellness benefits of exercising.</p>
+                  <a href="https://www.firmfitpersonaltraining.com/single-post/2016/12/28/-fitness-is-not-about-being-better-than-someone-else-it-s-about-being-better-than-you-us#:~:text=919.368.0333-,%E2%80%9CFitness%20is%20not%20about%20being%20better%20than%20someone%20else%E2%80%A6%20it's,competition%20to%20measure%20their%20success." class="btn">read more</a>
+              </div>
+          </div>
+            <div class="swiper-slide slide">
+                <div class="image">
+                    <img src="images/blog-2.jpg" alt="">
+                </div>
+                <div class="content">
+                    <div class="link"> <a href="https://www.muscleandstrength.com/workouts/6-day-powerbuilding-split-meal-plan">Muscle & Fitness</a> <span>|</span> <a href="#">21st may, 2021</a> </div>
+                    <h3>PUSH PULL LEG</h3>
+                    <p>The push/pull/legs workout is a popular training split that divides your muscles into three groups: push, pull, and legs. Each day of the week, you focus on working one of these muscle groups. This allows you to give each muscle group the time it needs to recover and grow.</p>
+                    <a href="https://www.muscleandstrength.com/workouts/6-day-powerbuilding-split-meal-plan" class="btn">read more</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide slide">
+                <div class="image">
+                    <img src="images/blog-3.jpg" alt="">
+                </div>
+                <div class="content">
+                    <div class="link"> <a href="#">Youtube</a> <span>|</span> <a href="#">21st may, 2021</a> </div>
+                    <h3>HST-10</h3>
+                    <p>FREE online Muscle building/Strength/Fat loss  program designed & Owned by Jeet Selal.</p>
+                    <a href="https://www.youtube.com/watch?v=0l6ovZFXngI" class="btn">read more</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide slide">
+                <div class="image">
+                    <img src="images/blog-4.jpg" alt="">
+                </div>
+                <div class="content">
+                    <div class="link"> <a href="#">Guru Mann</a> <span>|</span> <a href="#">21st may, 2021</a> </div>
+                    <h3>SIT-6</h3>
+                    <p>Super Intense Iraining</p>
+                    <a href="http://www.gurumann.com/Workout-Mixed.html" class="btn">read more</a>
+                </div>
+            </div>
+
+          
+
+        </div>
+
+        <div class="swiper-pagination"></div>
+
+    </div>
+
+</section>
+
+<!-- blogs section ends -->
+
+<!-- articles section begins  -->
+
+<section class="famous_articles" id="famous_articles">
+
+    <h1 class="heading"> <span>famous articles</span> </h1>
+
+    <div class="swiper blogs-slider">
+
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide slide">
+                <div class="image">
+                    <img src="images/famous_articles-1.png" alt="">
+                </div>
+                <div class="content">
+                    <div class="link"> <a href="https://www.webmd.com/diet/ss/slideshow-boost-your-metabolism">Christine Mikstas</a> <span>|</span> <a href="https://www.webmd.com/diet/ss/slideshow-boost-your-metabolism">04th november, 2021</a> </div>
+                    <h3> "10 Effective Ways to Boost Your Metabolism Naturally"</h3>
+                    <p></p>
+                    <a href="https://www.webmd.com/diet/ss/slideshow-boost-your-metabolism" class="btn">read more</a>
+                </div>
+            </div>
+            
+            <div class="swiper-slide slide">
+                <div class="image">
+                    <img src="images/famous_articles-2.png" alt="">
+                </div>
+                <div class="content">
+                    <div class="link"> <a href="https://legendswave.com/benefits-of-regular-exercise-for-physical-and-mental-health/">legend wave</a> <span>|</span> <a href="#">28st february, 2023</a> </div>
+                    <h3>"The Benefits of Regular Exercise: Improving Physical and Mental Health"</h3>
+                    <p></p>
+                    <a href="https://legendswave.com/benefits-of-regular-exercise-for-physical-and-mental-health/" class="btn">read more</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide slide">
+                <div class="image">
+                    <img src="images/famous_articles-3.png" alt="">
+                </div>
+                <div class="content">
+                    <div class="link"> <a href="https://www.hsph.harvard.edu/nutritionsource/healthy-eating-plate/">harvard</a> <span>|</span> <a href="#">1st january, 2023</a> </div>
+                    <h3>"Understanding the Basics of Balanced Nutrition: Building a Healthy Plate"</h3>
+                    <p></p>
+                    <a href="https://www.hsph.harvard.edu/nutritionsource/healthy-eating-plate/" class="btn">read more</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide slide">
+                <div class="image">
+                    <img src="images/famous_articles-4.png" alt="">
+                </div>
+                <div class="content">
+                    <div class="link"> <a href="https://www.allgoodinfo.in/2023/01/10-simple-stress-management-techniques.html">allgoodinfo</a> <span>|</span> <a href="#">21st january, 2021</a> </div>
+                    <h3>"Stress Management Techniques for a Healthier Mind and Body"</h3>
+                    <p></p>
+                    <a href="https://www.allgoodinfo.in/2023/01/10-simple-stress-management-techniques.html" class="btn">read more</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide slide">
+                <div class="image">
+                    <img src="images/famous_articles-5.png" alt="">
+                </div>
+                <div class="content">
+                    <div class="link"> <a href="https://wikibusiness.biz/beyond-feeling-rested-the-surprising-benefits-of-quality-sleep/">wikibusiness</a> <span>|</span> <a href="#">17th march, 2023</a> </div>
+                    <h3>"The Importance of Quality Sleep for Optimal Health and Well-being"</h3>
+                    <p></p>
+                    <a href="https://wikibusiness.biz/beyond-feeling-rested-the-surprising-benefits-of-quality-sleep/" class="btn">read more</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="swiper-pagination"></div>
+
+    </div>
+
+</section>
+
+<!-- blogs section ends -->
+
+<!-- articles section ends -->
+<!-- footer section starts  -->
+
+<section class="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+            <h3>quick links</h3>
+            <a class="links" href="#home">home</a>
+            <a class="links" href="#about">about</a>
+            <a class="links" href="#features">features</a>
+            <a class="links" href="#pricing">pricing</a>
+            <a class="links" href="#trainers">trainers</a>
+            <a class="links" href="#blogs">blogs</a>
+            <a class="links" href="#famous_articles">famous articles</a>
+            <a class="links" href="#contact">contact</a>
+        </div>
+
+        <div class="box">
+            <h3>Workout Schedule</h3>
+            <p> monday : <i>Chest + Triceps</i> </p>
+            <p> tuesday : <i> Back + Biceps </i> </p>
+            <p> wednesday : <i> Cardio + Abs + Calf </i> </p>
+            <p> thursday : <i> Deadlifts </i> </p>
+            <p> friday : <i> Shoulder + Triceps </i> </p>
+            <p> saturday : <i> Legs + Biceps </i> </p>
+            <p> sunday : <i> Cheat Day </i> </p>
+        </div>
+
+        <div class="box">
+            <h3>contact details</h3>
+            <p> <i class="fas fa-phone"></i> +91 798-867-2006 </p>
+            <p> <i class="fas fa-envelope"></i> nxvtej@gmail.com </p>
+            <p> <i class="fas fa-map"></i> chandigarh university </p>
+            <div class="share">
+                <a href="https://www.instagram.com/nxvdeep.s/" class="fab fa-facebook-f"></a>
+                <a href="https://twitter.com/hunting_es" class="fab fa-twitter"></a>
+                <a href="https://www.linkedin.com/in/navdeep-singh-62883821a/" class="fab fa-linkedin"></a>
+                <a href="https://in.pinterest.com/navtejsehrawat3/" class="fab fa-pinterest"></a>
+            </div>
+        </div>
+
+        <div class="box">
+            <h3>newsletter</h3>
+            <p>subscribe for latest updates</p>
+            <form action="">
+                <input type="email" name="" class="email" placeholder="enter your email" id="">
+                <input type="submit" value="subscribe" class="btn">
+            </form>
+        </div>
+
+    </div>
+
+</section>
+
+<div class="credit"> created by <span>Navdeep</span> | all rights reserved! </div>
+
+<!-- footer section ends -->
+
+
+
+
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+<!-- custom js file link  -->
+<script src="js/script.js"></script>
+
+</body>
+</html>

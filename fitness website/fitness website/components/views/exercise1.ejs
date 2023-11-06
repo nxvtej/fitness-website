@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: 'Nunito' , sans-serif;
+        }
+        ul li{
+            list-style-type:none;
+            display :flex;
+            float:center;
+            flex-direction:row-reverse;
+            float:right;
+            text-align:center;
+            margin-left:50px;
+            
+        }
+        textarea{
+            resize: none;
+        }
+        .newDiv{
+
+            display: none;
+        }
+        table{
+            background-color: black;
+            width: 400px;
+            color:white;
+        }
+    </style>
+</head>
+<body>
+<?php 
+
+$con = mysqli_connect('localhost', 'navdeep' , 'navdeep' , 'fitnesstracker');
+if($con){
+    echo "connection successful";
+}
+$name = $_POST['Name'];
+$type = $_POST['TYPE'];
+$query= "INSERT INTO exercise (name,type) VALUES ('$name','$type')";
+
+$rs = mysqli_query($con,$query);
+if($rs){
+    echo "data is inserted";
+}
+else {
+    echo "failed";
+}
+
+?>
+<h1 style="text-align: center; text-transform: uppercase; font-weight: bolder;"> Exercise </h1>
+<div class="maindiv" style="position: relative; left: -40%;">
+    <ul>
+        <li>GRAPH</li>
+        <li>HISTORY</li>
+        <li onclick="show()" style="cursor: pointer;" > NEW</li>
+    </ul>
+    
+</div>
+
+
+<br>
+<br>
+<div class="newDiv"  id="newDiv" style="position: relative; top:15px; padding: 10px;">
+<form>
+<h3 >DATE & TIME</h3>
+<hr>
+<input type="date" style="width: 300px;">
+<input type="time" style="width: 300px;">
+<br>
+<h3 >DURATION</h3>
+<hr>
+<input type="time" placeholder="hr" style="width: 300px;">
+<input type="time" placeholder="min" style="width: 300px;">
+<input type="time" placeholder="sec" style="width: 300px;">
+<br>
+<h3 >DISTANCE</h3>
+<hr>
+<input type="number" placeholder="MI/KM" style="width: 300px;">
+<br>
+<h3 >HEART RATE</h3>
+<hr>
+<input type="number" placeholder="BPM" style="width: 300px;">
+<br>
+<h3 > CALORIES</h3>
+<hr>
+
+<input type="number" placeholder="CA;" style="width: 300px;">
+<br>
+<br>
+<h3>NOTES</h3>
+<hr>
+<textarea cols="70" rows="10"></textarea>
+<br>
+<input type="submit" placeholder="SUBMIT">
+
+
+
+</form>
+
+</div>
+<div class="history"style=" position: relative; left:30%; text-align:center;">
+  
+
+    <table>
+        <tr>
+          <th>Company</th>
+          <th>Contact</th>
+          <th>Country</th>
+        </tr>
+        <tr>
+          <td>Alfreds Futterkiste</td>
+          <td>Maria Anders</td>
+          <td>Germany</td>
+        </tr>
+        <tr>
+          <td>Centro comercial Moctezuma</td>
+          <td>Francisco Chang</td>
+          <td>Mexico</td>
+        </tr>
+      </table>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+<script>
+    function show(){
+ var  newdivision=document.getElementById('newDiv');
+ newdivision.style.display="block";
+
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

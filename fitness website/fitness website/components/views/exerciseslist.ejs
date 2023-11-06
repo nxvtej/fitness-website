@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table {
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+
+        thead {
+            background-color: #ccc;
+        }
+
+        th {
+            border: 1px solid #666;
+            font-weight: bold;
+            padding: 10px;
+            text-align: left;
+        }
+
+        td {
+            border: 1px solid #666;
+            padding: 10px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            margin: 20px 0;
+            text-align: center;
+        }
+        .main{
+          margin: 10px auto;
+          padding: 5px auto;
+        }
+        html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+  overflow-x: hidden;
+}
+html::-webkit-scrollbar {
+  width: 1rem;
+}
+html::-webkit-scrollbar-track {
+  background: #000;
+}
+html::-webkit-scrollbar-thumb {
+  background: rgb(38, 145, 194);
+}
+
+section {
+  padding: 5rem 9%;
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+}
+.heading::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 0.1rem;
+  width: 100%;
+  background: #aaa;
+  z-index: -1;
+}
+.heading span {
+  font-size: 3rem;
+  color: rgb(38, 145, 194);
+  background: #000;
+  padding: 0.5rem 1.5rem;
+  border: 0.1rem solid #aaa;
+  border-radius: 0.5rem;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 9%;
+  z-index: 10000;
+  background: #000;
+}
+.header .logo {
+  font-weight: bolder;
+  color: #fff;
+  font-size: 3rem;
+}
+.header .logo span {
+  color: rgb(38, 145, 194);
+}
+.header .navbar a {
+  display: inline-block;
+  padding: 1.5rem 2rem;
+  font-size: 1.7rem;
+  color: #fff;
+}
+.header .navbar a:hover {
+  background: rgb(38, 145, 194);
+}
+.header .navbar a .navbar .btnLogin-popup {
+  width: 130px;
+  height: 50px;
+  background-color: #000;
+  border: 2px solid white;
+  outline: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: white;
+  font-weight: 500;
+  margin-left: 40px;
+  transition: 0.5s;
+}
+.header .navbar a .navbar .btnLogin-popup:hover {
+  background-color: royalblue;
+}
+
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <a href="#" class="logo"> <span>CU</span>FITNESS </a>
+      <div id="menu-btn" class="fas fa-bars"></div>
+      <nav class="navbar">
+          <a href="/index">home</a>
+          <!-- <a href="#about">about</a> -->
+          <!-- <a href="#features">features</a> -->
+          <a href="#pricing">pricing</a>
+          <a href="#trainers">trainers</a>
+          <!-- <a href="#blogs">blogs</a> -->
+          <a href="/exercise">Exercises</a>
+          <a href="/exerciseslist">Exercises List</a>
+          <a href="/logout">Logout</a>
+        </nav>
+  </header>
+    <h3 style="text-align: center; margin-top: 50px; font-size: xx-large;">Exercise Details</h3>
+    <div class="main" style = "top: 50px;">
+    <!-- <div style="display: flex; width: max-content; height: max-content;"> -->
+    <form action="/exerciseslist" method="post">
+      <table class="table table-striped table-primary">
+        <thead>
+          <tr>
+            <th>Exercise Name</th>
+            <th>Exercise Type</th>
+            <th>Exercise Date</th>
+            <th>Exercise Time</th>
+            <th>Distance</th>
+            <th>Heart rate</th>
+            <th>Calories</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%x.forEach((y)=>{%>
+          <tr>
+            <td><%=y.name%></td>
+            <td><%=y.type%></td>
+            <td><%=y.datess%></td>
+            <td><%=y.timess%></td>
+            <td><%=y.distance%></td>
+            <td><%=y.heartrate%></td>
+            <td><%=y.calories%></td>
+            <td><%=y.notes%></td>
+          </tr>
+          <%x})%>
+        </tbody>
+      </table>
+    </form>
+    </div>
+    <!-- </div> -->
+  </body>
+</html>
